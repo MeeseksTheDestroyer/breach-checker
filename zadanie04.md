@@ -30,4 +30,4 @@ breach-checker % docker run --rm -v breach-dane:/dane alpine sh -c "date >> /dan
 Wed Oct 28 22:14:10 UTC 2026
 Wed Oct 28 22:14:59 UTC 2026
 
-plik w /tmp przetrwał restart, ale nie rm dlatego ze przy rm zostal usuniety caly kontener wraz z wartswa z plikami. Natomiast w wypadku historia.txt plik nie był zapisany w warstwie żadnego z kontenerów tylko w wolumenie. docker nie usunie sam z siebie wolumenu przy usunieciu kontenera. LIsta wyciekow przetrwalaby usuniecie bo zostala dodana do wolumenu.
+plik w /tmp przetrwał restart, ale nie rm dlatego ze przy rm zostal usuniety caly kontener wraz z wartswa z plikami. Natomiast w wypadku historia.txt plik nie był zapisany w warstwie żadnego z kontenerów tylko w wolumenie. docker nie usunie sam z siebie wolumenu przy usunieciu kontenera. LIsta wyciekow przetrwalaby usuniecie bo jest dodany jako Bind mount więc kontener tylko go czyta.
