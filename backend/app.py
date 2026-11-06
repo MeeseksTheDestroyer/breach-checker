@@ -26,7 +26,7 @@ conn.close()
 def check():
     data = request.get_json(silent=True) or {}
     if "hash" not in data:
-        return jsonify({"error": "brak pola 'hash'"}), 400
+        return jsonify({"error": "nie podano pola 'hash'"}), 400
 
     h = str(data["hash"]).lower()
     if not re.fullmatch(r"[0-9a-f]{40}", h):
